@@ -1,0 +1,39 @@
+.docs {
+    margin-bottom: 60px;
+}
+
+.docs-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.docs-row {
+    padding: 20px;
+    border: 1px solid #136ef6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 30%;
+    column-gap: 20px;
+    transition: .2s;
+
+    & img {
+        width: 30%;
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.docs-row-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.docs-title {
+    font-size: 18px;
+    font-weight: 600;
+}

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+// Base
+@import "./base/reset";
+@import "./base/base";
+
+// Blocks
+@import "./blocks/header";
+@import "./blocks/news";
+@import "./blocks/card";
+@import "./blocks/contacts";
+@import "./blocks/docs";
+@import "./blocks/footer";
+
+// AdminPage
+@import "./blocks/courses";
+@import "./blocks/page";
+@import "./blocks/sidebar";
+
+
+//Plugins
+@import "./plugins/scroll";

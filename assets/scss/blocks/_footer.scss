@@ -1,0 +1,32 @@
+.footer {
+    border-top: 1px solid #e9ecef;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column {
+    width: 30%;
+}
+
+.footer-ul {
+    margin-top: 20px;
+}
+
+.footer-ul li {
+    margin-bottom: 20px;
+    transition: .2s;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.socials-icon {
+    margin-top: 20px;
+    display: flex;
+    column-gap: 10px;
+}
