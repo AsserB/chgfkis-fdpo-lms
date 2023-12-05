@@ -43,8 +43,13 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
             </div>
             <div class="header-row">
                 <div class="header-auth">
-                    <a href="/auth/login">Вход</a>
-                    <a href="/auth/register">Регистрация</a>
+                    <?php if ($user_role == false) : ?>
+                        <a href="/auth/login">Вход</a>
+                        <a href="/auth/register">Регистрация</a>
+                    <?php endif ?>
+                    <?php if ($user_role == true) : ?>
+                        <a href="/lms"><?= $user_email ?></a>
+                    <?php endif ?>
                 </div>
             </div>
         </header>
@@ -136,7 +141,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                 </div>
             </div>
         </section>
-        <section class="contacts" id="contacts">
+        <!-- <section class="contacts" id="contacts">
             <h2 class="subtitle contacts-title">Контактная информация</h2>
             <p>Если у вас есть вопросы о формате или вы не знаете, что выбрать, оставьте свой номер — мы позвоним и
                 ответим на все вопросы</p>
@@ -145,7 +150,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                 <input class="contacts-input" type="tel" placeholder="Телефон">
                 <input class="contacts-input" type="email" placeholder="Электронная почта">
                 <button class="form-button" type="submit">Получить консультацию</button>
-            </form>
+            </form> -->
         </section>
         <section class="docs" id="docs">
             <h2 class="subtitle">Лицензия и аккредитация</h2>

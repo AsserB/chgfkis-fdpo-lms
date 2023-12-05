@@ -18,7 +18,7 @@ class lmsController
         // Проверяем, зарегистрирован ли пользователь
         if (!isset($_SESSION['user_role'])) {
             // Если пользователь не зарегистрирован, перенаправляем его на страницу входа
-            header('Location: /');
+            header('Location: /auth/login');
             exit;
         }
 

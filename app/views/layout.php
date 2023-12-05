@@ -26,33 +26,37 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
 
     <div class="wrapper">
         <aside class="sidebar">
-            <a href="/" class="logo">
+            <a href="/" class="logo-sidebar">
                 <img src="/assets/img/logo.png" alt="Чурапчинский государственный институт физической культуры и спорта">
                 <p>ЧГФКиС.ФДПО</p>
             </a>
             <div class="sidebar-group">
                 <p class="sidbar-group-title"><?= $user_email ?></p>
-                <p class="sidbar-group-title">Моё обучение</p>
                 <ul class="sidebar-list">
-                    <li class="sidebar-item">
+                    <!-- <li class="sidebar-item">
                         <img src="/assets/img/icon/dashboards.png" alt="Дашборд">
                         <a href="#">Дашборд</a>
-                    </li>
+                    </li> -->
                     <li class="sidebar-item">
                         <img src="/assets/img/icon/scholarship.png" alt="Мои курсы">
-                        <a href="#">Мои курсы</a>
+                        <a href="#">Моё обучение</a>
                     </li>
                     <li class="sidebar-item">
-                        <img src="/assets/img/icon/list.png" alt="Курсы повышения квалификации">
-                        <a href="./courses.html">Курсы повышения квалификации</a>
+                        <img src="/assets/img/icon/user.png" alt="Настройки профиля">
+                        <a href="/users/userdata">Мои данные</a>
                     </li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <p class="sidbar-group-title">ФДПО</p>
+                <ul class="sidebar-list">
                     <li class="sidebar-item">
                         <img src="/assets/img/icon/studying.png" alt="Профессиональная переподготовка">
                         <a href="#">Профессиональная переподготовка</a>
                     </li>
                     <li class="sidebar-item">
-                        <img src="/assets/img/icon/settings.png" alt="Настройки профиля">
-                        <a href="#">Настройки профиля</a>
+                        <img src="/assets/img/icon/list.png" alt="Курсы повышения квалификации">
+                        <a href="./courses.html">Курсы повышения квалификации</a>
                     </li>
                 </ul>
             </div>
@@ -66,20 +70,6 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                     <li class="sidebar-item groups">
                         <img src="/assets/img/icon/groups.png" alt="Группы">
                         <a href="#">Группы</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="sidebar-group">
-                <p class="sidbar-group-title">Информация</p>
-                <ul class="sidebar-list">
-                    <li class="sidebar-item">
-                        <a href="#">Факультет</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#">Проекты</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#">Работники</a>
                     </li>
                 </ul>
             </div>
@@ -110,9 +100,6 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                     <?php endif ?>
                     <?php if ($user_role == true) : ?>
                         <li class="sidebar-item">
-                            <a href="/users/profile">Настройки профиля</a>
-                        </li>
-                        <li class="sidebar-item">
                             <a href="/auth/logout">Выйти</a>
                         </li>
                     <?php endif ?>
@@ -123,6 +110,9 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
             <?php echo $content; ?>
         </div>
     </div>
+
+    <script src="/assets/scripts/main.js"></script>
+
 </body>
 
 </html>

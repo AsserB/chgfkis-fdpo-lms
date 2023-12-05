@@ -24,4 +24,4 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'dpo');
 
-define('ENABLE_PERMISSION_CHEK', true);
+define('ENABLE_PERMISSION_CHEK', false);
