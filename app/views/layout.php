@@ -39,7 +39,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                     </li> -->
                     <li class="sidebar-item">
                         <img src="/assets/img/icon/scholarship.png" alt="Мои курсы">
-                        <a href="#">Моё обучение</a>
+                        <a href="/lms">Моё обучение</a>
                     </li>
                     <li class="sidebar-item">
                         <img src="/assets/img/icon/user.png" alt="Настройки профиля">
@@ -51,12 +51,12 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                 <p class="sidbar-group-title">ФДПО</p>
                 <ul class="sidebar-list">
                     <li class="sidebar-item">
-                        <img src="/assets/img/icon/studying.png" alt="Профессиональная переподготовка">
-                        <a href="#">Профессиональная переподготовка</a>
+                        <img src="/assets/img/icon/list.png" alt="Курсы повышения квалификации">
+                        <a href="/lms/kpk">Курсы повышения квалификации</a>
                     </li>
                     <li class="sidebar-item">
-                        <img src="/assets/img/icon/list.png" alt="Курсы повышения квалификации">
-                        <a href="./courses.html">Курсы повышения квалификации</a>
+                        <img src="/assets/img/icon/studying.png" alt="Профессиональная переподготовка">
+                        <a href="#">Профессиональная переподготовка</a>
                     </li>
                 </ul>
             </div>

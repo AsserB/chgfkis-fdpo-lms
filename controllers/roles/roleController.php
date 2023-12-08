@@ -10,19 +10,19 @@ use models\Check;
 class roleController
 {
 
-    //private $check;
+    private $check;
 
     public function __construct()
     {
 
         $userRole = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : null;
-        //$this->check = new Check($userRole);
+        $this->check = new Check($userRole);
     }
 
     //Метод для вывода всех пользователей на странице index
     public function index()
     {
-        //$this->check->requirePermission();
+        $this->check->requirePermission();
 
         $roleModel = new roleModel();
         $roles = $roleModel->getAllRoles();
@@ -33,7 +33,7 @@ class roleController
     //Вызов функции для создания ролей с файла
     public function create()
     {
-        //$this->check->requirePermission();
+        $this->check->requirePermission();
 
         include 'app/views/roles/create.php';
     }
@@ -41,7 +41,7 @@ class roleController
     //Фукция для работы с формой
     public function store()
     {
-        //$this->check->requirePermission();
+        $this->check->requirePermission();
 
         if (isset($_POST['role_name']) && isset($_POST['role_description'])) {
             $role_name = trim($_POST['role_name']);
@@ -61,7 +61,7 @@ class roleController
     //Функция для редактирования ролей
     public function edit($params)
     {
-        //$this->check->requirePermission();
+        $this->check->requirePermission();
 
         $roleModel = new roleModel();
         $role = $roleModel->getRoleByID($params['id']);
@@ -77,7 +77,7 @@ class roleController
     //Функция для обнвовления ролей
     public function update()
     {
-        //$this->check->requirePermission();
+        $this->check->requirePermission();
 
         if (isset($_POST['id']) && isset($_POST['role_name']) && isset($_POST['role_description'])) {
 
@@ -100,7 +100,7 @@ class roleController
     //Функция для удаления ролей
     public function delete($params)
     {
-        //$this->check->requirePermission();
+        $this->check->requirePermission();
 
         $userModel = new roleModel();
         $userModel->deleteRole($params['id']);

@@ -1,0 +1,34 @@
+.lms-title{
+    font-size: 24px;
+    font-weight: 500;
+
+    border-bottom: 1px solid #cccccc;
+    width: 50%;
+    padding-bottom: 10px;
+
+    margin-bottom: 40px;
+}
+
+.lms-subtitle{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.lms-warning{
+    margin-bottom: 40px;
+}
+
+.lms-link{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+
+    & p{
+        color: #136ef6;
+        text-decoration: underline;
+    }
+}
+
+.lms-button{
+    color: #fff !important;
+}
