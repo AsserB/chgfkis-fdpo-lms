@@ -3,7 +3,7 @@ ob_start();
 ?>
 
 <header class="content-header">
-    <h1 class="title">Список страниц</h1>
+    <h1 class="lms-title">Список страниц</h1>
 </header>
 
 <div class="users-header">

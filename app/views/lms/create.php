@@ -14,7 +14,7 @@ ob_start();
         <label for="timeline">Сроки</label>
         <input type="text" id="timeline" name="timeline" required>
         <label for="course_description">Описание курса</label>
-        <textarea type="text" name="course_description" id="course_description" cols="30" rows="5"></textarea>
+        <textarea type="text" name="courses_description" id="courses_description" cols="30" rows="5"></textarea>
     </div>
     <div class="form-button">
         <button type="submit" class="button">Сохранить</button>

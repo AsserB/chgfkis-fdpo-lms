@@ -31,6 +31,12 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                 </div>
 
                 <div class="form-info">
+                    <p>
+                        <a href="/auth/recover"><?= htmlspecialchars("Забыли пароль?") ?></a>
+                    </p>
+                </div>
+
+                <div class="form-info">
                     <p>Если у вас нет аккаунта то пройти
                         <a href="/auth/register"><?= htmlspecialchars("Регистрацию") ?></a>
                     </p>

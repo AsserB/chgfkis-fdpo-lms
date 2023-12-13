@@ -1,4 +1,13 @@
-.lms-title{
+.lms {
+    & li {
+        font-size: 16px;
+        margin-bottom: 10px;
+
+        font-weight: 500;
+    }
+}
+
+.lms-title {
     font-size: 24px;
     font-weight: 500;
 
@@ -9,26 +18,27 @@
     margin-bottom: 40px;
 }
 
-.lms-subtitle{
+.lms-subtitle {
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-.lms-warning{
+.lms-warning {
     margin-bottom: 40px;
 }
 
-.lms-link{
+.lms-link {
     display: flex;
     align-items: center;
     column-gap: 5px;
 
-    & p{
+    & p {
         color: #136ef6;
         text-decoration: underline;
     }
 }
 
-.lms-button{
+.lms-button {
     color: #fff !important;
+    margin-bottom: 40px;
 }

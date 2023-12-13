@@ -31,7 +31,7 @@ ob_start();
         <p><strong>Наличие инвалидности::</strong> <?php echo $frdo['disability']; ?></p>
         <p><strong>Номер СНИЛС (в формате 111-222-333 00):</strong> <?php echo $frdo['snils']; ?></p>
         <p><strong>Ссылка на скан/фото/скриншот СНИЛС:</strong> <?php echo $frdo['snils_path']; ?></p>
-        <a class="profile-button" href="/users/editprofile/<?php echo $fislist['id']; ?>">Редактировать</a>
+        <a class="profile-button" href="/users/fisfrdoedit/<?php echo $frdo['id']; ?>">Редактировать</a>
     </div>
 </div>
 

@@ -335,9 +335,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   row-gap: 30px;
@@ -351,9 +348,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 30%;
   max-height: 390px;
   padding-top: 30px;
@@ -370,6 +364,7 @@ body {
 }
 .card-item p {
   margin-bottom: 10px;
+  margin-right: 10px;
 }
 .card-item:hover {
   opacity: 0.8;
@@ -392,13 +387,19 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-weight: 600;
-  color: #0d6efd;
+  color: #0d6efd !important;
 }
 .card-button::after {
   content: url(../img/icon/right-arrow.png);
   width: 24px;
   height: 24px;
   margin-left: 10px;
+}
+.card-button.edit {
+  color: #15c70f !important;
+}
+.card-button.delete {
+  color: #b30710 !important;
 }
 
 .card-img {
@@ -447,9 +448,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
 }
 
 .docs-row {
@@ -596,6 +597,12 @@ body {
   margin-bottom: 1rem;
 }
 
+.lms li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
 .lms-title {
   font-size: 24px;
   font-weight: 500;
@@ -632,6 +639,20 @@ body {
 
 .lms-button {
   color: #fff !important;
+  margin-bottom: 40px;
+}
+
+.curator-title {
+  font-size: 24px;
+  font-weight: 500;
+  border-bottom: 1px solid #cccccc;
+  width: 50%;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+
+.sports {
+  margin-bottom: 80px;
 }
 
 .courses {
@@ -1078,6 +1099,7 @@ textarea {
 
 .form-info {
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .policy-info p {
@@ -1121,4 +1143,129 @@ textarea {
 .frdo-info {
   margin-top: -10px;
   margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 15px;
+  font-size: 14px;
+  overflow-x: auto;
+  overflow: auto;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  text-align: center;
+  padding: 10px;
+}
+
+.table th {
+  background-color: rgba(64, 85, 178, 0.7725490196);
+  color: #fff;
+}
+
+.table th:nth-child(odd) {
+  background-color: rgba(45, 69, 179, 0.7725490196);
+}
+
+.table tr {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.table tr:hover {
+  background-color: #ccc;
+}
+
+.table td:not(:last-child) {
+  border-right: 1px solid rgba(204, 204, 204, 0.5764705882);
+}
+
+.td-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.table-btn {
+  background-color: #4054b2;
+  padding: 10px 12px;
+  color: #fff !important;
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+.red {
+  color: #b24040 !important;
+}
+
+.green {
+  color: #1a345c !important;
+}
+
+.report-table {
+  display: none;
+}
+
+#cookie_notification {
+  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  width: 900px;
+  max-width: 90%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 25px;
+  background-color: white;
+  border-radius: 4px;
+  -webkit-box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+#cookie_notification p {
+  margin: 0;
+  font-size: 0.7rem;
+  text-align: left;
+}
+
+.cookie_info {
+  background-color: #fff;
+  color: #000 !important;
+}
+
+@media (min-width: 576px) {
+  #cookie_notification.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .cookie_accept {
+    margin: 0 0 0 25px;
+  }
+}
+@media (max-width: 575px) {
+  #cookie_notification.show {
+    display: block;
+    text-align: left;
+  }
+  .cookie_accept {
+    margin: 10px 0 0 0;
+  }
 }

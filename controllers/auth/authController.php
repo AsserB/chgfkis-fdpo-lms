@@ -30,7 +30,6 @@ class authController
             $data['username'] = trim($_POST['username']);
             $data['email'] = trim($_POST['email']);
             $data['password'] = trim($_POST['password']);
-            $data['confirm_password'] = trim($_POST['confirm_password']);
             $data['role'] = 1; //по умолчанию
 
             if ($authModel->findByEmail($email)) {
@@ -68,6 +67,75 @@ class authController
                 header("Location: /lms");
             } else {
                 echo "Некорректный логин или пароль";
+            }
+        }
+    }
+
+    public function recover()
+    {
+        include 'app/views/auth/recover.php';
+    }
+
+    public function recoverpassword()
+    {
+        if (isset($_POST['email'])) {
+            $email = trim($_POST['email']);
+
+            $authModel = new authModel();
+            $user = $authModel->findByEmail($email);
+
+            if ($user) {
+                // Если пользователь существует, генерируем временный пароль
+                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $tempPassword = substr(str_shuffle($characters), 0, 6);
+                $user_id = $user['id'];
+
+                // Сохраняем временный пароль в базе данных, связанный с соответствующим пользователем
+                $authModel->postTempPassword($user_id, $tempPassword);
+
+                $to = $email;
+                $subject = 'Восстановление доступа';
+                $message = 'Ваш код для восстановления пароля: ' . $tempPassword . ' перейдите по ссылке https://lean-manager.ru/auth/changepassword и вставьте полученный код и поменяйте пароль';
+                $headers = 'From: lean-manager.ru' . "\r\n" .
+                    'Reply-To: webmaster@example.com' . "\r\n" .
+                    'X-Mailer: PHP/' . phpversion();
+
+                mail($to, $subject, $message, $headers);
+            }
+
+            $authModel->deletePassword($user_id);
+        }
+
+        header("Location: /auth/changepassword");
+        //header("Location: /");
+    }
+
+    public function changepassword()
+    {
+        include 'app/views/auth/changepassword.php';
+    }
+
+    public function changepasswordbyuser()
+    {
+        if (isset($_POST['password']) && isset($_POST['temp_password'])) {
+            $data['temp_password'] = trim($_POST['temp_password']);
+
+            $authModel = new authModel();
+            $temp_passwords_row = $authModel->getChekTempPassword($data);
+
+            if ($temp_passwords_row === false) {
+                echo "вы не правильно ввели Код подтверждения";
+            } else {
+                $userID = $authModel->getTempPasswordUserID($data);
+                $data['password'] = trim($_POST['password']);
+                $data['id'] = $userID['user_id'];
+
+                $authModel->changePassword($data);
+
+                // Удалить строку из таблицы temp_password по id
+                $authModel->deleteTempPassword($data);
+
+                header("Location: /auth/login");
             }
         }
     }

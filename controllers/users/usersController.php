@@ -6,6 +6,7 @@ use models\users\userModel;
 use models\auth\authModel;
 use models\Check;
 use models\roles\roleModel;
+use models\lms\lmsModel;
 
 //--Контроллер для CRUD "Пользователи"--//
 class usersController
@@ -173,5 +174,17 @@ class usersController
         }
 
         header("Location: /users/userdata");
+    }
+
+    public function fisfrdoedit()
+    {
+        $this->check->requirePermission();
+
+        $user_id = $this->userId;
+
+        $userModel = new userModel();
+        $user = $userModel->readUser($user_id);
+
+        include 'app/views/users/fisfrdoedit.php';
     }
 }

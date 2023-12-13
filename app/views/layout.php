@@ -18,7 +18,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
     <meta name="keywords" content="ключевые слова, фразы" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/main.css?ver=2" />
 
 </head>
 
@@ -54,10 +54,6 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                         <img src="/assets/img/icon/list.png" alt="Курсы повышения квалификации">
                         <a href="/lms/kpk">Курсы повышения квалификации</a>
                     </li>
-                    <li class="sidebar-item">
-                        <img src="/assets/img/icon/studying.png" alt="Профессиональная переподготовка">
-                        <a href="#">Профессиональная переподготовка</a>
-                    </li>
                 </ul>
             </div>
             <div class="sidebar-group">
@@ -65,20 +61,17 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                 <ul class="sidebar-list">
                     <li class="sidebar-item users">
                         <img src="/assets/img/icon/users.png" alt="Пользователи">
-                        <a href="#">Пользователи</a>
+                        <a href="/users">Пользователи</a>
                     </li>
                     <li class="sidebar-item groups">
                         <img src="/assets/img/icon/groups.png" alt="Группы">
-                        <a href="#">Группы</a>
+                        <a href="/lms/curator">Группы</a>
                     </li>
                 </ul>
             </div>
             <div class="sidebar-group">
                 <p class="sidbar-group-title">Aдминистративная панель</p>
                 <ul class="sidebar-list">
-                    <li class="sidebar-item">
-                        <a href="/users">Пользователи</a>
-                    </li>
                     <li class="sidebar-item">
                         <a href="/pages">Страницы</a>
                     </li>

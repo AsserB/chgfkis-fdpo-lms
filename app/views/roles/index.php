@@ -3,7 +3,7 @@ ob_start();
 ?>
 
 <header class="content-header">
-    <h1 class="title">Список ролей</h1>
+    <h1 class="lms-title">Список ролей</h1>
 </header>
 
 <div class="users-header">

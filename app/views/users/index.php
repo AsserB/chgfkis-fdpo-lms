@@ -3,7 +3,7 @@ ob_start();
 ?>
 
 <header class="content-header">
-    <h1 class="title">Список пользователей</h1>
+    <h1 class="title curator-title">Список пользователей</h1>
 </header>
 
 <table class="table">

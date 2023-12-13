@@ -78,7 +78,7 @@ ob_start();
         <input type="text" placeholder="номер СНИЛС" id="snils" name="snils" required maxlength="14">
 
         <label>Ссылка на скан/фото/скриншот СНИЛС (Необходимо для того, чтобы избежать любых возможных ошибок)</label>
-        <input type="text" placeholder="номер СНИЛС" id="snils_path" name="snils_path" required>
+        <input type="text" placeholder="Ссылка" id="snils_path" name="snils_path" required>
 
     </div>
     <div class="form-button">

@@ -13,6 +13,8 @@
 @import "./blocks/footer";
 @import "./blocks/profile";
 @import "./blocks/lms";
+@import "./blocks/curator";
+@import "./blocks/sports";
 
 // AdminPage
 @import "./blocks/courses";
@@ -23,3 +25,5 @@
 //Plugins
 @import "./plugins/scroll";
 @import "./plugins/forms";
+@import "./plugins/table";
+@import "./plugins/cookie";

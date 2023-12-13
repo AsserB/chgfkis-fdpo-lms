@@ -10,7 +10,6 @@
 
 .card-list {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 30px;
 }
@@ -18,7 +17,6 @@
 .card-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
     width: 30%;
     max-height: 390px;
@@ -35,6 +33,7 @@
 
     & p {
         margin-bottom: 10px;
+        margin-right: 10px;
     }
 
     overflow: hidden;
@@ -55,7 +54,7 @@
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    color: #0d6efd;
+    color: #0d6efd !important;
 
     &::after {
         content: url(../img/icon/right-arrow.png);
@@ -63,6 +62,14 @@
         width: 24px;
         height: 24px;
         margin-left: 10px;
+    }
+
+    &.edit {
+        color: #15c70f !important;
+    }
+
+    &.delete {
+        color: #b30710 !important;
     }
 }
 

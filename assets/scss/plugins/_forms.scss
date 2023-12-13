@@ -33,8 +33,8 @@
     width: 600px;
     margin: 0 auto;
     margin-bottom: 20px;
-    
-    &.create{
+
+    &.create {
         display: flex;
         flex-direction: row;
         column-gap: 30px;
@@ -46,7 +46,7 @@
         }
     }
 
-    &.edits{
+    &.edits {
         display: flex;
         flex-direction: row;
         column-gap: 30px;
@@ -66,7 +66,7 @@
     }
 }
 
-.form-fields__row{
+.form-fields__row {
     width: 50%;
 
     margin-bottom: 30px;
@@ -76,7 +76,7 @@
     }
 }
 
-.form-fields__row p{
+.form-fields__row p {
     font-size: 18px;
     text-align: center;
     color: #383838;
@@ -86,7 +86,7 @@
     margin-top: 20px;
 }
 
-label{
+label {
     color: #000000d6;
 }
 
@@ -117,7 +117,7 @@ textarea {
     height: 50px;
 }
 
-.form-fields__textarea{
+.form-fields__textarea {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -156,21 +156,21 @@ textarea {
 
     width: 100%;
 
-    &.edit-select{
+    &.edit-select {
         width: 20%;
 
         text-align: center;
 
         margin: 0 auto;
 
-        &:first-child{
+        &:first-child {
             margin-bottom: 0;
         }
     }
 
 }
 
-.form-select{
+.form-select {
     display: block;
     width: 100%;
     padding: 0.375rem 2.25rem 0.375rem 0.75rem;
@@ -185,14 +185,14 @@ textarea {
     background-size: 16px 12px;
     border: 2px solid #acacac7d;
     border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     margin-bottom: 10px;
 }
 
-.select{
+.select {
     margin-bottom: 10px;
     border: 2px solid #e9f2ff;
     font-size: 16px;
@@ -200,15 +200,15 @@ textarea {
     border-radius: 5px;
 }
 
-.form-checkbox{
+.form-checkbox {
     display: flex;
     align-content: center;
     justify-content: center;
-    
+
     margin-top: 10px;
 }
 
-.form-checkbox input{
+.form-checkbox input {
     text-align: center;
 
     width: 20px;
@@ -216,39 +216,40 @@ textarea {
     margin-right: 10px;
 }
 
-.form-info{
+.form-info {
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-.policy-info{
+.policy-info {
 
-    & p{
+    & p {
         font-size: 12px !important;
         opacity: .8;
     }
-    
+
 }
 
-.form-info p{
+.form-info p {
     text-align: center;
     font-size: 16px;
     color: #4b5563;
 }
 
-.form-info a{
+.form-info a {
     color: #136ef6;
     font-weight: 500;
     text-decoration: underline;
 }
 
-.form-auth{
+.form-auth {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.form-logo{
+.form-logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -256,7 +257,7 @@ textarea {
     margin-bottom: 30px;
 }
 
-.frdo-info{
+.frdo-info {
     margin-top: -10px;
     margin-bottom: 20px;
 }

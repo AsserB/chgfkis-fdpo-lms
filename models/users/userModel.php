@@ -56,9 +56,17 @@ class userModel
             FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
           )";
 
+        $tempPasswordsTableQuery = "CREATE TABLE IF NOT EXISTS `temp_passwords` (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT,
+            temp_password VARCHAR(255),
+            created_at DATETIME
+            )";
+
         try {
             $this->db->exec($userTableQuery);
             $this->db->exec($frdoTableQuery);
+            $this->db->exec($tempPasswordsTableQuery);
 
             return true;
         } catch (\PDOException $e) {
@@ -174,4 +182,7 @@ class userModel
             return false;
         }
     }
+
+    // _______________CURATOR________________\
+
 }

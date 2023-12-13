@@ -8,8 +8,17 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
 <section class="lms">
     <h1 class="lms-title">Список курсов</h1>
     <h2 class="lms-subtitle">Доступные курсы:</h2>
-    <p class="lms-warning">Вы еше не записаны на курсы</p>
 
+    <?php if (empty($courses)) : ?>
+        <p class="lms-warning">Вы еще не записаны на курсы</p>
+    <?php endif; ?>
+    <ol>
+        <?php foreach ($courses as $course) : ?>
+
+            <li><a href="/lms/education/<?php echo $course['id']; ?>"><?php echo $course['title']; ?></a></li>
+
+        <?php endforeach; ?>
+    </ol>
     <a href="/lms/kpk" class="lms-link">
         <p>Записаться на курсы</p>
         <img src="/assets/img/icon/right-arrow.png" alt="Курсы повышения квалификации">
