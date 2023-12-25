@@ -22,7 +22,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
             <div class="header-row">
                 <div class="logo">
                     <img src="/assets/img/logo.png" alt="Факультет дополнительного образования">
-                    <p>ЧГИФКиС.ФДПО</p>
+                    <p>ФГБОУ ВО ЧГИФКиС</p>
                 </div>
                 <nav class="nav">
                     <ul class="nav-list">
@@ -122,6 +122,20 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
             <h2 class="subtitle">Спорт норма жизни</h2>
             <a href="https://normasport.ru/">
                 <img src="/assets/img/logo-snj.png" alt="">
+            </a>
+        </section>
+
+        <section class="sports" id="sports">
+            <h2 class="subtitle">История института</h2>
+            <a href="https://normasport.ru/">
+
+            </a>
+        </section>
+
+        <section class="sports" id="sports">
+            <h2 class="subtitle">История факультета</h2>
+            <a href="https://normasport.ru/">
+
             </a>
         </section>
 

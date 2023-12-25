@@ -7,37 +7,20 @@
     overflow: auto;
 
     margin-top: 20px;
+
+    margin-bottom: 50px;
 }
 
 .table th,
 .table td {
     text-align: center;
     padding: 10px;
+    border: 1px solid #6e6e6e93;
 }
 
 .table th {
-    background-color: #4055b2c5;
-    color: #fff;
-}
-
-.table th:nth-child(odd) {
-    background-color: #2d45b3c5;
-}
-
-.table tr {
-    transition: all .3s;
-}
-
-.table tr:nth-child(even) {
-    background-color: #f5f5f5;
-}
-
-.table tr:hover {
-    background-color: #ccc;
-}
-
-.table td:not(:last-child) {
-    border-right: 1px solid #cccccc93;
+    background-color: #ebebebc5;
+    color: #000000;
 }
 
 .td-wrapper {
@@ -58,7 +41,8 @@
 }
 
 .green {
-    color: #1a345c !important;
+    color: #2e7c2b !important;
+    font-weight: 500;
 }
 
 .report-table {

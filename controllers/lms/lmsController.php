@@ -195,4 +195,10 @@ class lmsController
 
         include 'app/views/lms/curator.php';
     }
+
+    public function addlesson()
+    {
+        $this->check->requirePermission();
+        include 'app/views/lms/addlesson.php';
+    }
 }

@@ -65,7 +65,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                     </li>
                     <li class="sidebar-item groups">
                         <img src="/assets/img/icon/groups.png" alt="Группы">
-                        <a href="/lms/curator">Группы</a>
+                        <a href="/lms/curator">Кураторство</a>
                     </li>
                 </ul>
             </div>

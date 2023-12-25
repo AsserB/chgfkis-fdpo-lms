@@ -13,6 +13,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
             <tr>
                 <th class="table-row" scope="col">ФИО</th>
                 <th class="table-row" scope="col">Электронная почта</th>
+                <th class="table-row" scope="col">Оплата</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,11 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                 <tr>
                     <td><?php echo $user['username']; ?></td>
                     <td><?php echo $user['email']; ?></td>
+                    <td>
+                        <div class="td-wrapper">
+                            <a class="green" href="/roles/edit/<?php echo $user['id']; ?>">Подтвердить</a>
+                        </div>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
