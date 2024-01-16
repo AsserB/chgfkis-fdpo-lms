@@ -183,8 +183,47 @@ class usersController
         $user_id = $this->userId;
 
         $userModel = new userModel();
+        $frdo = $userModel->readUserFrdo($user_id);
         $user = $userModel->readUser($user_id);
 
         include 'app/views/users/fisfrdoedit.php';
+    }
+
+    public function fisfrdoupdate()
+    {
+        $this->check->requirePermission();
+
+        if (isset($_POST['surname']) && !empty($_POST['surname']) && isset($_POST['firstname']) && !empty($_POST['firstname']) && isset($_POST['snils']) && !empty($_POST['snils'])) {
+
+            $userModel = new userModel();
+            $data['id'] = trim($_POST['id']);
+            $data['user_id'] = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 0;
+            $data['surname'] = trim(filter_input(INPUT_POST, 'surname', FILTER_SANITIZE_STRING));
+            $data['firstname'] = trim(filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING));
+            $data['thirdname'] = trim(filter_input(INPUT_POST, 'thirdname', FILTER_SANITIZE_STRING));
+            $data['gender'] = trim(filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING));
+            $data['birthday'] = trim(filter_input(INPUT_POST, 'birthday', FILTER_SANITIZE_STRING));
+            $data['education'] = trim(filter_input(INPUT_POST, 'education', FILTER_SANITIZE_STRING));
+            $data['education_number'] = trim(filter_input(INPUT_POST, 'education_number', FILTER_SANITIZE_STRING));
+            $data['spec'] = trim(filter_input(INPUT_POST, 'spec', FILTER_SANITIZE_STRING));
+            $data['job_place'] = trim($_POST['job_place']);;
+            $data['job_title'] = trim(filter_input(INPUT_POST, 'job_title', FILTER_SANITIZE_STRING));
+            $data['exp_all'] = trim(filter_input(INPUT_POST, 'exp_all', FILTER_SANITIZE_STRING));
+            $data['exp_in_org'] = trim(filter_input(INPUT_POST, 'exp_in_org', FILTER_SANITIZE_STRING));
+            $data['title'] = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING));
+            $data['disability'] = trim(filter_input(INPUT_POST, 'disability', FILTER_SANITIZE_STRING));
+            $data['snils'] = trim(filter_input(INPUT_POST, 'snils', FILTER_SANITIZE_STRING));
+            $data['snils_path'] = trim(filter_input(INPUT_POST, 'snils_path', FILTER_SANITIZE_STRING));
+
+            if (!$userModel->frdoUpdate($data)) {
+                // Обработка ошибки
+                echo "Произошла ошибка при добавлении данных в базу данных.";
+            }
+        } else {
+            // Обработка ошибки
+            echo "Не все поля заполнены.";
+        }
+
+        header("Location: /users/userdata");
     }
 }

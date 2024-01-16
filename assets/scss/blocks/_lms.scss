@@ -23,6 +23,21 @@
     margin-bottom: 20px;
 }
 
+.frdo-warning{
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+
+    padding: 5px;
+    border: 1px solid red;
+}
+
+.frdo-warning-link{
+    font-weight: 600;
+    color: red;
+    text-decoration: underline;
+}
+
 .lms-warning {
     margin-bottom: 40px;
 }

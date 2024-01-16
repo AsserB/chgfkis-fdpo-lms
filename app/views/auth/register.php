@@ -36,6 +36,11 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                 <button type="submit" class="button">Зарегистрироваться</button>
             </div>
 
+            <div class="form-info policy-info">
+                <p>Создавая аккаунт, я соглашаюсь
+                    c <a class="text-primary" href="/info/policy">"политикой обработки и хранения персональных данных"</a> и <a class="text-primary" href="/info/useragreement">"пользовательским соглашением"</a></p>
+            </div>
+
             <div class="form-info">
                 <p>Если у вас уже есть аккаунт
                     <a href="/auth/login"><?= htmlspecialchars("Авторизация") ?></a>

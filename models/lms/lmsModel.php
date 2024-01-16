@@ -80,6 +80,20 @@ class lmsModel
             $courses = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             return $courses;
         } catch (\PDOException $e) {
+            return [];
+        }
+    }
+
+    public function getFrdoDataByUserId($user_id)
+    {
+        $query = "SELECT COUNT(*) AS count FROM frdo WHERE user_id = ?";
+
+        try {
+            $stmt = $this->db->prepare($query);
+            $stmt->execute([$user_id]);
+            $count = $stmt->fetchColumn();
+            return $count > 0;
+        } catch (\PDOException $e) {
             return false;
         }
     }
@@ -128,7 +142,6 @@ class lmsModel
         }
     }
 
-    //Метод для обновления пользователя взаимодействие с SQL для поиска по id пользователя
     public function getCourseById($id)
     {
         $query = "SELECT * FROM courses WHERE id= ?";
@@ -161,10 +174,9 @@ class lmsModel
 
     public function getAllUsersStudiesInCourses($id)
     {
-        $query = "SELECT users.*, frdo.*
-        FROM users
-        JOIN confirm_courses ON users.id = confirm_courses.user_id
-        JOIN frdo ON users.id = frdo.user_id
+        $query = "SELECT confirm_courses.id AS confirm_id, CONCAT(frdo.surname, ' ', frdo.firstname, ' ', frdo.thirdname) AS fullname, frdo.*
+        FROM confirm_courses
+        JOIN frdo ON confirm_courses.user_id = frdo.user_id
         WHERE confirm_courses.courses_id = ?";
 
         try {
@@ -172,6 +184,20 @@ class lmsModel
             $stmt->execute([$id]);
             $courses = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             return $courses;
+        } catch (\PDOException $e) {
+            return false;
+        }
+    }
+
+    public function deleteUsersFromCourse($id)
+    {
+        $query = "DELETE FROM confirm_courses WHERE id= ?";
+
+        try {
+
+            $stmt = $this->db->prepare($query);
+            $stmt->execute([$id]);
+            return  true;
         } catch (\PDOException $e) {
             return false;
         }

@@ -7,11 +7,17 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
 
 <section class="lms">
     <h1 class="lms-title">Список курсов</h1>
+
+    <?php if (empty($frdoIsNull)) : ?>
+        <p class="lms-warning frdo-warning">Вы не заполнили свои данные для ФИС ФРДО! для заполнения перейдите по ссылке: <a class="frdo-warning-link" href="/users/userdata">Мои данные</a>. Без заполнения данных вы не сможете записаться на курсы</p>
+    <?php endif; ?>
+
     <h2 class="lms-subtitle">Доступные курсы:</h2>
 
     <?php if (empty($courses)) : ?>
         <p class="lms-warning">Вы еще не записаны на курсы</p>
     <?php endif; ?>
+
     <ol>
         <?php foreach ($courses as $course) : ?>
 

@@ -35,8 +35,76 @@ class lmsController
 
         $lmsModel = new lmsModel();
         $courses = $lmsModel->getAllCoursesByIdUser($user_id);
+        $frdoIsNull = $lmsModel->getFrdoDataByUserId($user_id);
 
         include 'app/views/lms/index.php';
+    }
+
+    public function confirm($params)
+    {
+        $this->check->requirePermission();
+
+        $user_id = $this->userId;
+
+        $userModel = new userModel();
+        $user = $userModel->readUser($user_id);
+
+        $lmsModel = new lmsModel();
+        $course = $lmsModel->getCourseById($params['id']);
+
+        $frdoIsNull = $lmsModel->getFrdoDataByUserId($user_id);
+
+
+        include 'app/views/lms/confirm.php';
+    }
+
+    public function confirmcourses()
+    {
+        $this->check->requirePermission();
+
+        if (isset($_POST['user_id']) && isset($_POST['courses_id'])) {
+            $data['user_id'] = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 0;
+            $data['courses_id'] = trim($_POST['courses_id']);
+
+            $lmsModel = new lmsModel();
+            $lmsModel->confirmCourses($data);
+        }
+
+        header("Location: /lms");
+    }
+
+    public function education($params)
+    {
+        $this->check->requirePermission();
+
+        $lmsModel = new lmsModel();
+        $course = $lmsModel->getCourseById($params['id']);
+
+        include 'app/views/lms/education.php';
+    }
+
+    public function students($params)
+    {
+        $this->check->requirePermission();
+
+        $lmsModel = new lmsModel();
+        $course = $lmsModel->getCourseById($params['id']);
+
+        $lmsModel = new lmsModel();
+        $users = $lmsModel->getAllUsersStudiesInCourses($params['id']);
+
+        include 'app/views/lms/students.php';
+    }
+
+    //____________CURATOR______________
+    public function curator()
+    {
+        $this->check->requirePermission();
+
+        $lmsModel = new lmsModel();
+        $courses = $lmsModel->getAllCourses();
+
+        include 'app/views/lms/curator.php';
     }
 
     public function kpk()
@@ -117,7 +185,7 @@ class lmsController
             echo "Не все поля заполнены.";
         }
 
-        header("Location: /lms/kpk");
+        header("Location: /lms/curator");
     }
 
     //Функция для удаления курса
@@ -128,72 +196,19 @@ class lmsController
         $lmsModel = new lmsModel();
         $lmsModel->deleteCourses($params['id']);
 
-        header("Location:  /lms/kpk"); // Перенаправление на страницу со всеми страницами
+        header("Location:  /lms/curator"); // Перенаправление на страницу кураторства
     }
 
-    public function confirm($params)
-    {
-        $this->check->requirePermission();
-
-        $user_id = $this->userId;
-
-        $userModel = new userModel();
-        $user = $userModel->readUser($user_id);
-
-        $lmsModel = new lmsModel();
-        $course = $lmsModel->getCourseById($params['id']);
-
-
-        include 'app/views/lms/confirm.php';
-    }
-
-    public function confirmcourses()
-    {
-        $this->check->requirePermission();
-
-        if (isset($_POST['user_id']) && isset($_POST['courses_id'])) {
-            $data['user_id'] = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 0;
-            $data['courses_id'] = trim($_POST['courses_id']);
-
-            $lmsModel = new lmsModel();
-            $lmsModel->confirmCourses($data);
-        }
-
-        header("Location: /lms");
-    }
-
-    public function education($params)
+    public function deleteuserforcourse($params) // Удалить пользователей с таблицы confirm_courses
     {
         $this->check->requirePermission();
 
         $lmsModel = new lmsModel();
-        $course = $lmsModel->getCourseById($params['id']);
+        $lmsModel->deleteUsersFromCourse($params['id']);
 
-        include 'app/views/lms/education.php';
-    }
-
-    public function students($params)
-    {
-        $this->check->requirePermission();
-
-        $lmsModel = new lmsModel();
-        $course = $lmsModel->getCourseById($params['id']);
-
-        $lmsModel = new lmsModel();
-        $users = $lmsModel->getAllUsersStudiesInCourses($params['id']);
-
-        include 'app/views/lms/students.php';
-    }
-
-    //____________CURATOR______________
-    public function curator()
-    {
-        $this->check->requirePermission();
-
-        $lmsModel = new lmsModel();
-        $courses = $lmsModel->getAllCourses();
-
-        include 'app/views/lms/curator.php';
+        ob_end_clean(); // Очистка буфера вывода
+        header("Location: " . $_SERVER['HTTP_REFERER']); // Перенаправление на страницу, откуда было выполнено удаление
+        exit(); // Завершение выполнения скрипта
     }
 
     public function addlesson()

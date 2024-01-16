@@ -11,7 +11,24 @@ ob_start();
 
     </div>
     <div class="form-button">
-        <button type="submit" class="button">Подтверждаю</button>
+        <?php if (!empty($frdoIsNull)) : ?>
+            <button type="submit" class="button">Подтверждаю</button>
+        <?php endif; ?>
+        <?php if (empty($frdoIsNull)) : ?>
+            <p class="lms-warning frdo-warning">Вы не заполнили свои данные для ФИС ФРДО! для заполнения перейдите по ссылке: <a class="frdo-warning-link" href="/users/userdata">Мои данные</a>. Без заполнения данных вы не сможете записаться на курсы</p>
+        <?php endif; ?>
+    </div>
+
+    <div class="form-info">
+        <p>Подтверждая запись, на курс
+            вы соглашаетесь с <a class="text-primary" href="/info/policy">"политикой обработки и хранения персональных данных"</a></p>
+    </div>
+    <div class="form-info">
+        <p>и</p>
+    </div>
+    <div class="form-info">
+        <p>Подтверждая запись, на курс
+            вы соглашаетесь с <a class="text-primary" href="/info/useragreement">"пользовательским соглашением"</a></p>
     </div>
 </form>
 

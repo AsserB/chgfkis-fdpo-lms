@@ -11,19 +11,24 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
     <table class="table">
         <thead>
             <tr>
+                <th class="table-row" scope="col">id</th>
                 <th class="table-row" scope="col">ФИО</th>
-                <th class="table-row" scope="col">Электронная почта</th>
-                <th class="table-row" scope="col">Оплата</th>
+                <th class="table-row" scope="col">Место работы</th>
+                <th class="table-row" scope="col">Подтверждение</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($users as $user) : ?>
                 <tr>
-                    <td><?php echo $user['username']; ?></td>
-                    <td><?php echo $user['email']; ?></td>
+                    <td><?php echo $user['confirm_id']; ?></td>
+                    <td><?php echo $user['fullname']; ?></td>
+                    <td><?php echo $user['job_place']; ?></td>
                     <td>
+                        <!-- <div class="td-wrapper">
+                            <a class="green" href="/lms/confirm/<?php echo $user['id']; ?>">Подтвердить</a>
+                        </div> -->
                         <div class="td-wrapper">
-                            <a class="green" href="/roles/edit/<?php echo $user['id']; ?>">Подтвердить</a>
+                            <a class="red" href="/lms/deleteuserforcourse/<?php echo $user['confirm_id']; ?>">Удалить</a>
                         </div>
                     </td>
                 </tr>

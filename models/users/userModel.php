@@ -183,6 +183,19 @@ class userModel
         }
     }
 
+    public function frdoUpdate($data)
+    {
+        $query = "UPDATE frdo SET surname = ?, firstname = ?, thirdname = ?, gender = ?, birthday = ?, education = ?, education_number = ?, spec = ?, job_place = ?, job_title = ?, exp_all = ?, exp_in_org = ?, title = ?, disability = ?, snils = ?, snils_path = ? WHERE id = ?";
+
+        try {
+            $stmt = $this->db->prepare($query);
+            $stmt->execute([$data['surname'], $data['firstname'], $data['thirdname'], $data['gender'], $data['birthday'], $data['education'], $data['education_number'], $data['spec'], $data['job_place'], $data['job_title'], $data['exp_all'], $data['exp_in_org'], $data['title'], $data['disability'], $data['snils'], $data['snils_path'], $data['id']]);
+            return true;
+        } catch (\PDOException $e) {
+            return false;
+        }
+    }
+
     // _______________CURATOR________________\
 
 }

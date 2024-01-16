@@ -7,6 +7,7 @@ class Router
 
     private $routes = [
         '/^\/?$/' => ['controller' => 'home\\homeController', 'action' => 'index'],
+        '/^\/info(\/(?P<action>[a-z]+)(\/(?P<id>\d+))?)?$/' => ['controller' => 'info\\InfoController'],
         '/^\/users(\/(?P<action>[a-z]+)(\/(?P<id>\d+))?)?$/' => ['controller' => 'users\\usersController'],
         '/^\/pages(\/(?P<action>[a-z]+)(\/(?P<id>\d+))?)?$/' => ['controller' => 'pages\\pageController'],
         '/^\/roles(\/(?P<action>[a-z]+)(\/(?P<id>\d+))?)?$/' => ['controller' => 'roles\\roleController'],

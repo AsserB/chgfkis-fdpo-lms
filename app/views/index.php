@@ -11,8 +11,12 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ЧГИФКиС.ФДПО</title>
+    <title>Чурапчинский государственный институт физической культуры и спорта</title>
     <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
 
 </head>
 
@@ -58,7 +62,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
         </header>
         <div class="header-content">
             <div class="header-content-row">
-                <h1 class="title">Факультет дополнительного образования</h1>
+                <h1 class="title">Факультет дополнительного профессионального образования</h1>
                 <a class="header-button" href="/lms">Начать учиться</a>
             </div>
             <div class="header-content-row">
@@ -125,7 +129,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
             </a>
         </section>
 
-        <section class="sports" id="sports">
+        <!-- <section class="sports" id="sports">
             <h2 class="subtitle">История института</h2>
             <a href="https://normasport.ru/">
 
@@ -137,7 +141,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
             <a href="https://normasport.ru/">
 
             </a>
-        </section>
+        </section> -->
 
         <section class="docs" id="docs">
             <h2 class="subtitle">Лицензия и аккредитация</h2>
@@ -198,7 +202,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
             <div class="footer-column">
                 <ul class="footer-ul">
                     <li>
-                        <p>О вузе</p>
+                        <p class="footer-title">О факультете</p>
                     </li>
                     <li>
                         <a href="https://www.chgifkis.ru/sveden/common.html">Сведения об образовательной организации</a>
@@ -206,40 +210,27 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                     <li>
                         <a href="https://www.chgifkis.ru/about_the_university/charter/">Устав</a>
                     </li>
-                    <li>
-                        <a href="#">Партнеры</a>
-                    </li>
                 </ul>
             </div>
             <div class="footer-column">
                 <ul class="footer-ul">
                     <li>
-                        <p>Абитуриенту</p>
+                        <p class="footer-title">Слушателю КПК</p>
                     </li>
                     <li>
                         <a href="https://www.chgifkis.ru/about_the_university/faculty_and_staff/">Преподаватели и сотрудники</a>
                     </li>
                     <li>
-                        <a href="#">Спорт норма жизни</a>
+                        <a href="https://normasport.ru/">Спорт норма жизни</a>
                     </li>
                     <li>
-                        <a href="#">Противодействие коррупции</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <ul class="footer-ul">
-                    <li>
-                        <p>О вузе</p>
+                        <a href="/info/policy">Политика обработки и хранения персональных данных</a>
                     </li>
                     <li>
-                        <a href="https://www.chgifkis.ru/about_the_university/faculty_and_staff/">Преподаватели и сотрудники</a>
+                        <a href="/info/useragreement">Пользовательское соглашение</a>
                     </li>
                     <li>
-                        <a href="#">Спорт норма жизни</a>
-                    </li>
-                    <li>
-                        <a href="#">Противодействие коррупции</a>
+                        <a href="/info/cookie">Политика обработки файлов cookie</a>
                     </li>
                 </ul>
             </div>
