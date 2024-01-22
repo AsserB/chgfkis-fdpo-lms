@@ -59,7 +59,7 @@ class authController
             $user = $authModel->findByEmail($email);
 
             if ($user && password_verify($password, $user['password'])) {
-                session_start();
+                //session_start();
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_role'] = $user['role'];
                 $_SESSION['user_email'] = $user['email'];

@@ -9,7 +9,6 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
     <h1 class="lms-title">Курсы повышения квалификации</h1>
 
     <div class="courses" id="courses">
-        <h2 class="subtitle">Направления подготовки</h2>
         <div class="card">
             <div class="card-list">
                 <?php foreach ($courses as $course) : ?>

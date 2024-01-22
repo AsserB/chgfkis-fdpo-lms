@@ -22,7 +22,7 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/main.css?ver=2" />
+    <link rel="stylesheet" href="/assets/css/main.css?ver=4">
 
 </head>
 
@@ -60,17 +60,6 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                     </li>
                 </ul>
             </div>
-            <div class="sidebar-group">
-                <p class="sidbar-group-title">Документация</p>
-                <ul class="sidebar-list">
-                    <li class="sidebar-item">
-                        <a href="/info/policy">Политика обработки и хранения персональных данных</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="/info/useragreement">Пользовательское соглашение</a>
-                    </li>
-                </ul>
-            </div>
             <?php if ($user_role == 2 || $user_role == 3) : ?>
                 <div class="sidebar-group">
                     <p class="sidbar-group-title">Кураторство</p>
@@ -99,6 +88,17 @@ $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : false;
                     </ul>
                 </div>
             <?php endif ?>
+            <div class="sidebar-group">
+                <p class="sidbar-group-title">Документация</p>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="/info/policy">Политика обработки и хранения персональных данных</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="/info/useragreement">Пользовательское соглашение</a>
+                    </li>
+                </ul>
+            </div>
             <div class="sidebar-group">
                 <p class="sidbar-group-title">Панель авторизации</p>
                 <ul class="sidebar-list">

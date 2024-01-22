@@ -11,15 +11,16 @@
 .card-list {
     display: flex;
     flex-wrap: wrap;
+    column-gap: 30px;
     row-gap: 30px;
 }
 
 .card-item {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     width: 30%;
-    max-height: 390px;
     padding-top: 30px;
     padding-left: 30px;
     padding-right: 30px;
@@ -54,15 +55,7 @@
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    color: #0d6efd !important;
-
-    &::after {
-        content: url(../img/icon/right-arrow.png);
-
-        width: 24px;
-        height: 24px;
-        margin-left: 10px;
-    }
+    color: #0066FF !important;
 
     &.edit {
         color: #15c70f !important;
@@ -71,13 +64,4 @@
     &.delete {
         color: #b30710 !important;
     }
-}
-
-.card-img {
-    position: relative;
-    top: -120px;
-    right: -231px;
-
-    width: 175px;
-    height: 150px;
 }

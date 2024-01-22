@@ -55,7 +55,7 @@ class lmsController
         $frdoIsNull = $lmsModel->getFrdoDataByUserId($user_id);
 
 
-        include 'app/views/lms/confirm.php';
+        include 'app/views/lms/member/confirm.php';
     }
 
     public function confirmcourses()
@@ -80,7 +80,7 @@ class lmsController
         $lmsModel = new lmsModel();
         $course = $lmsModel->getCourseById($params['id']);
 
-        include 'app/views/lms/education.php';
+        include 'app/views/lms/member/education.php';
     }
 
     public function students($params)
@@ -93,7 +93,7 @@ class lmsController
         $lmsModel = new lmsModel();
         $users = $lmsModel->getAllUsersStudiesInCourses($params['id']);
 
-        include 'app/views/lms/students.php';
+        include 'app/views/lms/curator/students.php';
     }
 
     //____________CURATOR______________
@@ -104,7 +104,7 @@ class lmsController
         $lmsModel = new lmsModel();
         $courses = $lmsModel->getAllCourses();
 
-        include 'app/views/lms/curator.php';
+        include 'app/views/lms/curator/curator.php';
     }
 
     public function kpk()
@@ -121,7 +121,7 @@ class lmsController
     {
         $this->check->requirePermission();
 
-        include 'app/views/lms/create.php';
+        include 'app/views/lms/curator/create.php';
     }
 
     public function createkpk()
@@ -159,7 +159,7 @@ class lmsController
         $lmsModel = new lmsModel();
         $course = $lmsModel->getCourseById($params['id']);
 
-        include 'app/views/lms/kpkedit.php';
+        include 'app/views/lms/curator/kpkedit.php';
     }
 
     public function update()
@@ -206,7 +206,7 @@ class lmsController
         $lmsModel = new lmsModel();
         $lmsModel->deleteUsersFromCourse($params['id']);
 
-        ob_end_clean(); // Очистка буфера вывода
+        //ob_end_clean(); // Очистка буфера вывода
         header("Location: " . $_SERVER['HTTP_REFERER']); // Перенаправление на страницу, откуда было выполнено удаление
         exit(); // Завершение выполнения скрипта
     }
